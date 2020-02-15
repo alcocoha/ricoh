@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../src/components/Header';
-import CreateProducts from '../src/components/CreateProducts';
-import Products from '../src/components/Products';
-import SalesAnalysis from '../src/components/SalesAnalysis';
+import Header from '../src/containers/Header';
+import CreateProducts from './containers/CreateProducts';
+import Products from './containers/Products';
+import SalesAnalysis from './containers/SalesAnalysis';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header/>
-      
+
       <Container maxWidth="sm">
         <Switch>
           <Route exact path="/" component={ CreateProducts }/>
