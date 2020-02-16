@@ -1,6 +1,7 @@
 import React from 'react';
 import RicohSelect from '../../components/RicohSelect';
 import RicohText from '../../components/RicohText';
+import Container from '@material-ui/core/Container';
 
 const CreateProducts = () => {
 
@@ -9,7 +10,7 @@ const CreateProducts = () => {
     }
 
     return (
-        <div>
+        <Container maxWidth="sm">
             <h1>Crear nuevo ordenador</h1>
             <RicohText
                 id= "texto1"
@@ -22,7 +23,7 @@ const CreateProducts = () => {
                 label="Modelo"
                 onChange= { handleChange }
             />
-        </div>
+        </Container>
     );
 };
 
