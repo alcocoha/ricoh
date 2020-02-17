@@ -28,7 +28,7 @@ const RicohNavBar = props => {
 
     return (
         <>
-            <div className={classes.imgContainer}><img src={logo} /></div>
+            {/* <div className={classes.imgContainer}><img src={logo} /></div> */}
             <AppBar position="static" className={classes.root}>
                 <Tabs value={ value } onChange={ handleChange } aria-label="simple tabs example">
                     { buildMenu() }
