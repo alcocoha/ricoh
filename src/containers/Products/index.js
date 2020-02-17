@@ -1,50 +1,60 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import RicohTable from '../../components/RicohTable';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-
-function createData( brand, model, price, cpu, ram, type, shape ) {
-	return { brand, model, price, cpu, ram, type, shape };
-}
-
-const rows = [
-	createData( 'amsi', 'aegis', 12344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'bmsi', 'aegis', 22344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'cmsi', 'aegis', 32344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'dmsi', 'aegis', 42344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'emsi', 'aegis', 52344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'fmsi', 'aegis', 62344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'gmsi', 'aegis', 72344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'hmsi', 'aegis', 82344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'imsi', 'aegis', 92344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'jmsi', 'aegis', 102344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'kmsi', 'aegis', 112344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'lmsi', 'aegis', 122344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'mmsi', 'aegis', 132344, 'i7', 64, 'gaming', 'desktop'),
-	createData( 'nmsi', 'aegis', 142344, 'i7', 64, 'gaming', 'desktop')
-];
+import Container from '@material-ui/core/Container';
+import { addFirstProductAction } from '../../store/actions/productsActions';
+import { getData } from '../../api';
+import isEmpty from 'lodash/isEmpty';
 
 const Products = () => {
+
+    const dispatch = useDispatch();
+	const products = useSelector( state => state.products );
+	
+	const getAllProducts = async () => {
+        const data = await getData('5e4a06f92f0000640097cea4');
+        dispatch( addFirstProductAction( data ) );
+    }
+
+    useEffect( () => {
+		if(isEmpty( products)){
+			getAllProducts();
+		}
+	}, []);
+	
+	console.log('products', products.data)
+
 	return (
-		<div>
-			<RicohTable
-				rows= { rows }
-			/>
-			<Carousel>
-                <div>
-                    <img src="assets/1.jpeg" />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="assets/2.jpeg" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="assets/3.jpeg" />
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel>
-		</div>
+		<>
+			{ products.data &&
+				<RicohTable
+					rows= { products.data }
+				/>
+			}
+			<Container maxWidth="lg">
+				<h1>Carrusel de ordenadores portatiles</h1>
+				<Carousel
+					showThumbs={ false }
+				>
+					<div>
+						<p className="legend">Legend 1</p>
+						<div style={{ position: 'absolute', width: 100, height:200, backgroundColor: '#ff0000'}}>foo</div>
+						<div style={{ position: 'absolute'}}>bar</div>
+						<img src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
+					</div>
+					<div>
+						<img src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
+						<p className="legend">Legend 2</p>
+					</div>
+					<div>
+						<img src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
+						<p className="legend">Legend 3</p>
+					</div>
+				</Carousel>
+			</ Container>
+		</>
 	);
 };
 

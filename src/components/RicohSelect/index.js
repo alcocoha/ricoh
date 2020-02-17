@@ -39,14 +39,14 @@ const RicohSelect = props => {
 RicohSelect.propTypes = {
     id : PropTypes.string.isRequired,
     label : PropTypes.string,
-    value : PropTypes.object,
+    value : PropTypes.string,
     options : PropTypes.array
 };
 
 RicohSelect.defaultProps = {
     id : 'id-select',
     label : 'Title',
-    value : { label: 'foo', value: 1 },
+    value : '',
     options: [
         { label: 'foo', value: 1 },
         { label: 'bar', value: 2 }

@@ -12,6 +12,7 @@ import Container from '@material-ui/core/Container';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { useStyles } from './styles';
+import RicohText from '../RicohText';
 
 function descendingComparator(a, b, orderBy) {
 	if (b[orderBy] < a[orderBy]) {
@@ -40,13 +41,13 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-	{ id: "brand", numeric: true, disablePadding: false, label: "brand" },
-	{ id: "model", numeric: true, disablePadding: false, label: "model" },
-	{ id: "price", numeric: true, disablePadding: false, label: "price" },
-	{ id: "cpu", numeric: true, disablePadding: false, label: "cpu" },
-	{ id: "ram", numeric: true, disablePadding: false, label: "ram" },
-	{ id: "type", numeric: true, disablePadding: false, label: "type" },
-	{ id: "shape", numeric: true, disablePadding: false, label: "shape" }
+	{ id: "brand", numeric: true, disablePadding: false, label: "Brand" },
+	{ id: "model", numeric: true, disablePadding: false, label: "Model" },
+	{ id: "price", numeric: true, disablePadding: false, label: "Price" },
+	{ id: "cpu", numeric: true, disablePadding: false, label: "CPU" },
+	{ id: "ram", numeric: true, disablePadding: false, label: "RAM" },
+	{ id: "type", numeric: true, disablePadding: false, label: "Type" },
+	{ id: "shape", numeric: true, disablePadding: false, label: "Shape" }
 ];
 
 function EnhancedTableHead(props) {
@@ -103,6 +104,7 @@ EnhancedTableHead.propTypes = {
 const RicohTable = props => {
     const { rows } = props;
 	const classes = useStyles();
+	const [ newRows, setNewRows ] = React.useState(rows);
 	const [order, setOrder] = React.useState('asc');
 	const [orderBy, setOrderBy] = React.useState('calories');
 	const [page, setPage] = React.useState(0);
@@ -136,6 +138,51 @@ const RicohTable = props => {
 		setPage(0);
 	};
 
+	const handleChange = e => {
+		const id = e.target.id;
+		const value = e.target.value;
+		const rowsData = rows.filter( item => {
+			switch (id) {
+				case 'brand':
+					if( item.brand.includes(value) ) {
+						return item;
+					}
+					break;
+				case 'model':
+					if( item.model.includes(value) ) {
+						return item;
+					}
+					break;
+				case 'price':
+					if( item.price.includes(value) ) {
+						return item;
+					}
+					break;
+				case 'cpu':
+					if( item.cpu.includes(value) ) {
+						return item;
+					}
+					break;
+				case 'ram':
+					if( item.ram.includes(value) ) {
+						return item;
+					}
+					break;
+				case 'type':
+					if( item.type.includes(value) ) {
+						return item;
+					}
+					break;
+				case 'shape':
+					if( item.shape.includes(value) ) {
+						return item;
+					}
+					break;
+			}
+		});
+		setNewRows( rowsData );
+	}
+
 	const items = [];
 	for(var i = 0; i < totalPages(); i++) { items.push(i); }
 
@@ -158,7 +205,24 @@ const RicohTable = props => {
 								rowCount={rows.length}
 							/>
 							<TableBody>
-								{stableSort(rows, getComparator(order, orderBy))
+								<TableRow >
+									{
+										headCells.map( (item, index) =>
+											<TableCell align="center" key={index}>
+												<RicohText
+													id={ item.id }
+													onChange={ handleChange }
+													placeholder="Buscar"
+													shrinkValidate={ false }
+													label={ "" }
+												/>
+											</TableCell>
+										)
+									}
+								</TableRow>
+							</TableBody>
+							<TableBody>
+								{stableSort(newRows, getComparator(order, orderBy))
 								.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 								.map((row, index) => {
 									return (
