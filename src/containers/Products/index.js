@@ -6,7 +6,6 @@ import { Carousel } from 'react-responsive-carousel';
 import Container from '@material-ui/core/Container';
 import { addFirstProductAction } from '../../store/actions/productsActions';
 import { getData } from '../../api';
-import isEmpty from 'lodash/isEmpty';
 
 const Products = () => {
 

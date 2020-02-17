@@ -3,9 +3,14 @@ import { GET, POST } from './config';
 const API_URL = 'http://www.mocky.io/v2/';
 
 const REST_API = async ( endPoint, verb ) => {
-    const respond = await fetch( `${API_URL}${endPoint}`, verb );
-    if( respond.status === 404 || respond.status === 500 )  throw new Error( "Not 200 response" );
-    return respond.json();
+    try {
+        const respond = await fetch( `${API_URL}${endPoint}`, verb );
+        if( respond.status === 404 || respond.status === 500 )  throw new Error( "Not 200 response" );
+        return respond.json();
+    } catch (error) {
+        console.log('error')
+        return { error: 'foo'}
+    }
 };
 
 export const getData = endPoint => REST_API( endPoint, GET );

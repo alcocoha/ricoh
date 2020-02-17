@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import { CATALOGS } from '../../constants/commons';
 import { useStyles } from './styles';
 import { addProductAction } from '../../store/actions/productsActions';
-import { getData } from '../../api';
 
 const CreateProducts = () => {
 
