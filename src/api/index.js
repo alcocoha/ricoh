@@ -1,6 +1,6 @@
 import { GET, POST } from './config';
 
-const API_URL = 'http://www.mocky.io/v2/';
+const API_URL = 'https://www.mocky.io/v2/';
 
 const REST_API = async ( endPoint, verb ) => {
     try {
