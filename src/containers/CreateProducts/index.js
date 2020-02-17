@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import RicohSelect from '../../components/RicohSelect';
 import RicohText from '../../components/RicohText';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import { CATALOGS } from '../../constants/commons';
 import { useStyles } from './styles';
-import { addProductAction, addFirstProductAction } from '../../store/actions/productsActions';
+import { addProductAction } from '../../store/actions/productsActions';
 import { getData } from '../../api';
 
 const CreateProducts = () => {
@@ -45,6 +45,9 @@ const CreateProducts = () => {
             case 'shape':
                 setShape( value );
                 break;
+            default:
+                console.log('default')
+                break;
         }
     }
 
@@ -53,16 +56,6 @@ const CreateProducts = () => {
     const handleAddProduct = () => {
         dispatch( addProductAction( { brand, model, price, cpu, ram, type, shape } ) );
     }
-
-    const getAllProducts = async () => {
-        const data = await getData('5e4a06f92f0000640097cea4');
-        dispatch( addFirstProductAction( data ) );
-    }
-
-    useEffect( () => {
-        getAllProducts();
-    }, []);
-
 
     return (
         <Container maxWidth="sm">

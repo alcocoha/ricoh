@@ -1,4 +1,5 @@
 import { PRODUCTS } from '../../constants/reduxTypes';
+import isEmpty from 'lodash/isEmpty';
 
 export default ( state = {}, action = {} ) => {
 
@@ -8,7 +9,11 @@ export default ( state = {}, action = {} ) => {
     const { type, payload } = action;
 
     if( type === PRODUCTS.ADD_PRODUCT ){
-        newState = { data: [ ...state.data, payload ] }
+        if(isEmpty( state )) {
+            newState = { data: [ payload ] }
+        } else {
+            newState = { data: [ ...state.data, payload ] }
+        }
     } else if( type === PRODUCTS.ADD_FIRST_PRODUCT ){
         newState = { ...state, data: payload };
     }

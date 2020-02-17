@@ -12,19 +12,16 @@ const Products = () => {
 
     const dispatch = useDispatch();
 	const products = useSelector( state => state.products );
-	
+
 	const getAllProducts = async () => {
-        const data = await getData('5e4a06f92f0000640097cea4');
+		const data = await getData('5e4a06f92f0000640097cea4');
+		console.log('data', data)
         dispatch( addFirstProductAction( data ) );
     }
 
     useEffect( () => {
-		if(isEmpty( products)){
-			getAllProducts();
-		}
+		getAllProducts();
 	}, []);
-	
-	console.log('products', products.data)
 
 	return (
 		<>

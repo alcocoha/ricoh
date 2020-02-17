@@ -1,5 +1,7 @@
 const INITIAL_STATE = {
-    products: {}
+    products: {
+        data: []
+    }
 }
 
 export default INITIAL_STATE;

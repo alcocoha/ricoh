@@ -109,7 +109,7 @@ const RicohTable = props => {
 	const [orderBy, setOrderBy] = React.useState('calories');
 	const [page, setPage] = React.useState(0);
 	const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  
+
 	const handleRequestSort = (event, property) => {
 	  const isAsc = orderBy === property && order === 'asc';
 	  setOrder(isAsc ? 'desc' : 'asc');
@@ -117,7 +117,7 @@ const RicohTable = props => {
 	};
 
 	const totalPages = () => Math.ceil( rows.length / rowsPerPage );
-  
+
 	const handleChangePage = (event, newPage) => {
 		const tPages = totalPages();
 		switch (event) {
@@ -130,9 +130,12 @@ const RicohTable = props => {
 			case 'num':
 				setPage(newPage);
 				break;
+			default:
+				console.log('defeult');
+				break;
 		}
 	};
-  
+
 	const handleChangeRowsPerPage = value => {
 		setRowsPerPage(parseInt(value, 10));
 		setPage(0);
@@ -142,43 +145,48 @@ const RicohTable = props => {
 		const id = e.target.id;
 		const value = e.target.value;
 		const rowsData = rows.filter( item => {
+			let result = null;
 			switch (id) {
 				case 'brand':
 					if( item.brand.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
 				case 'model':
 					if( item.model.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
 				case 'price':
 					if( item.price.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
 				case 'cpu':
 					if( item.cpu.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
 				case 'ram':
 					if( item.ram.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
 				case 'type':
 					if( item.type.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
 				case 'shape':
 					if( item.shape.includes(value) ) {
-						return item;
+						result = item;
 					}
 					break;
+				default:
+					console.log('default');
+					break;
 			}
+			return result;
 		});
 		setNewRows( rowsData );
 	}
