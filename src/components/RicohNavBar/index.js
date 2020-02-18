@@ -5,7 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Link } from 'react-router-dom';
 import { useStyles } from './styles';
-import logo from '../../assets/images/ricoh-hd_logo.png'
+import logo from '../../resources/images/ricoh-hd_logo.png'
 
 const RicohNavBar = props => {
     const classes = useStyles();
@@ -28,7 +28,7 @@ const RicohNavBar = props => {
 
     return (
         <>
-            {/* <div className={classes.imgContainer}><img src={logo} /></div> */}
+            <div className={classes.imgContainer}><img src={logo} /></div>
             <AppBar position="static" className={classes.root}>
                 <Tabs value={ value } onChange={ handleChange } aria-label="simple tabs example">
                     { buildMenu() }

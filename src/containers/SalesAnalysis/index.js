@@ -1,93 +1,106 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
-import {Bar} from 'react-chartjs-2';
-import {Polar} from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
+import { addFirstProductAction } from '../../store/actions/productsActions';
+import { getData } from '../../api';
+import isEmpty from 'lodash/isEmpty';
+import { decimalToHex } from '../../utils';
 import './styles.scss';
 
-
-const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-        {
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
-        data: [65, 59, 80, 81, 56, 55, 40]
-        }
-    ]
-};
-
-const data1 = {
-    datasets: [{
-      data: [
-        11,
-        16,
-        7,
-        3,
-        14
-      ],
-      backgroundColor: [
-        '#FF6384',
-        '#4BC0C0',
-        '#FFCE56',
-        '#E7E9ED',
-        '#36A2EB'
-      ],
-      label: 'My dataset' // for legend
-    }],
-    labels: [
-      'Red',
-      'Green',
-      'Yellow',
-      'Grey',
-      'Blue'
-    ]
-  };
-
-const data2 = {
-	labels: [
-		'Red',
-		'Green',
-		'Yellow'
-	],
-	datasets: [{
-		data: [300, 50, 100],
-		backgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
-		],
-		hoverBackgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
-		]
-	}]
-};
-
 const SalesAnalysis = () => {
+
+    const [ requestActive, setRequestActive ] = useState(false);
+
+    const dispatch = useDispatch();
+
+    // we bring the data from the store
+	const products = useSelector( state => state.products );
+
+    const getAllProducts = async () => {
+        // if products is empty apply request to get data products
+        if( isEmpty( products ) ){
+            const data = await getData('5e4a06f92f0000640097cea4');
+            dispatch( addFirstProductAction( data ) );
+            setRequestActive(true);
+        }
+    }
+
+    const getBarLabels = () => products && products.data.map( item => `${item.brand} ${item.model}` );
+
+    const getBarData = () => products && products.data.map( item => item.price );
+
+    // bar chart data is created
+    const barData = () => ( {
+        labels: getBarLabels(),
+        datasets: [
+            {
+                label: 'Precios',
+                backgroundColor: 'rgba(255,99,132,0.2)',
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                hoverBorderColor: 'rgba(255,99,132,1)',
+                data: getBarData()
+            }
+        ]
+    } );
+
+    // donut chart data is created
+    const donutData = () => {
+        const productsData = products && products.data.map( item => item.ram );
+        const countData = productsData.reduce( ( countType, type ) => {
+            countType[type] = ( countType[type] || 0 ) + 1;
+            return countType;
+        }, {});
+
+        const labels = Object.keys( countData );
+        const data = Object.values( countData );
+
+        const colors = [];
+        
+        // dynamic colors are created
+        for( let i = 0; i < data.length; i++){
+            colors.push(decimalToHex());
+        };
+
+        return {
+            labels,
+            datasets: [{
+                data,
+                backgroundColor: colors,
+                hoverBackgroundColor: colors
+            }]
+        };
+    }
+
+    useEffect( () => {
+        if( !requestActive ) getAllProducts();
+    }, []);
+
     return (
         <div className="sales-analysis-container">
             <h1>Analisis de ventas</h1>
             <div className="grid">
-                <div>
-                    <Bar
-                        data={data}
-                        width={1000}
-                        height={600}
-                        animation={true}
-                        options={{
-                            maintainAspectRatio: false
-                        }}
-                    />
-                </div>
-                <div>
-                    <Polar data={data1} />
-                    <Doughnut data={data2} />
-                </div>
+                { !isEmpty( products ) && 
+                    <>
+                        <div>
+                            <Bar
+                                data={ barData() }
+                                width={1000}
+                                height={600}
+                                animation={true}
+                                options={{
+                                    maintainAspectRatio: false
+                                }}
+                            />
+                        </div>
+                        <div className="donut-chart">
+                            <h4>Memoria RAM</h4>
+                            <Doughnut data={donutData()} />
+                        </div>
+                    </>
+                }
             </div>
             
         </div>

@@ -1,0 +1,54 @@
+.item-container{
+    background-color: 'white';
+    height: 300px;
+    width: 100%;
+}
+.carousel {
+    .slide {
+        min-width: 100%;
+        margin: 0;
+        position: relative;
+        text-align: center;
+        background: white;
+    }
+    &.carousel-slider{
+        margin-bottom: 200px;
+        margin-top: 50px;
+        .control-arrow{
+            background: blue;
+            padding: 30px;
+        }
+    }
+    .slide{
+        img{
+            width: 208px;
+            left: 9%;
+            position: absolute;
+            top: 39px;
+        }
+        .legend{
+            width: 40%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity: 1;
+            font-size: 30px;
+            background-color: #0095ff;
+            font-weight: 800;
+        }
+    } 
+}
+
+.info{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 300px;
+    line-height: 2;
+
+    .text{
+        font-size: 26px;
+        font-weight: 800;
+    }
+}

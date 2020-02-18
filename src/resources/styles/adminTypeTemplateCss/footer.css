@@ -1,0 +1,29 @@
+/********************************************************************** FOOTER ******************************************************************************/
+
+.footer {
+    width: -webkit-fill-available;
+    position:fixed;
+    bottom:0;
+    height: 35px;
+    background: #ffffff;
+    border-top: solid 1px dimgrey;
+    text-align: center;
+}
+
+.footerInfo{
+	color: #011e4a;
+	font-size: 14px;
+    padding-top: 8px;
+}
+
+.footer .noCollapse{
+    margin-left: 170px; 
+    transition: all 0.5s;
+    display: block;
+}
+
+.footer .collapse{
+    margin-left: 45px;
+    transition: all 0.5s;
+    display: block;
+}

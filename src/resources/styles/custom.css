@@ -1,0 +1,199 @@
+/********************************************************************** CUSTOM CSS ******************************************************************************/
+
+
+/************************* GENERAL ******************************/
+
+ul {
+    text-align: left;
+}
+
+/************************* FORM VIEW ******************************/
+
+.form-group {
+    margin-bottom: 2vh;
+}
+
+.form-control {
+    margin-bottom: 2vh;
+}
+
+label {
+    color: #011e4a;
+}
+
+.tittleCardName{
+    font-size: 4vh;
+    margin-left: 3vh;
+}
+
+/************************* TABLE/CAROUSEL VIEW ******************************/
+
+tr:nth-child(even) {
+    background: #d3e2ef;
+}
+
+tr:nth-child(odd) {
+    color: #000000;
+}
+
+td {
+    text-align: center;
+}
+
+.ng-table-sort-header{
+    color: #839abb !important;
+}
+
+.carousel {
+    position: relative;
+    height: 175px;
+}
+
+.carousel img{
+    position: absolute;
+    height: 200px;
+    vertical-align: middle;
+    overflow: visible;
+    top: -10px;
+    left: 0;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 240px;
+}
+
+.carousel-inner {
+    font-family: inherit;
+}
+
+.carousel-inner .fas{
+    margin-right: 20px;
+}
+
+.carousel-control:hover {
+    text-shadow: 1px 1px 1px black;
+}
+
+.brand{
+     font-size: 25px;
+    color: #337ab7;
+}
+
+.model{
+    font-size: 25px;
+    color: #337ab7;
+}
+
+.cpu{
+    font-size: 22px;
+    color: #8b9abb;
+}
+
+.price{
+    font-size: 22px;
+    color: #8b9abb;
+}
+
+.ram{
+    font-size: 22px;
+    color: #8b9abb;
+}
+
+.type{
+    font-size: 22px;
+    color: #8b9abb;
+}
+
+.brandModelPaddingBottom{
+    border-radius: 50px;
+    margin-bottom: 18px;
+    background: #d3e2ef;
+    margin-top: 32px;
+}
+
+.carousel-control.right{
+    background-image: linear-gradient(to left,rgba(51, 122, 183, 0.47) 0,rgba(0,0,0,.0001) 100%);
+    border-radius: 14px;
+}
+
+.carousel-control.left {
+    background-image: linear-gradient(to right,rgba(51, 122, 183, 0.47) 0,rgba(0,0,0,.0001) 100%);
+    border-radius: 14px;
+}
+
+.glyphicon-chevron-right:before {
+    color: #839abb;
+}
+
+.glyphicon-chevron-left:before {
+    color: #839abb;
+}
+
+
+/************************* CHARTS VIEW ******************************/
+
+.card1{
+    background: #f7464a;;
+    box-shadow: 0px 0px 0px 10px inset white;
+    height: 150px;
+    color: white;
+}
+
+.card2{
+    background: #97bbcd;
+    box-shadow: 0px 0px 0px 10px inset white;
+    height: 150px;
+    color: white;
+}
+
+.card3{
+    background: #dcdcdc;  
+    box-shadow: 0px 0px 0px 10px inset white;
+    height: 150px;
+    color: white;
+}
+
+.ourFauvoriteImg{
+    width: 120px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    border-radius: 33px;
+}
+
+.card1 .ourFauvoriteName{
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+
+.card2 .ourFauvoriteName{
+    color: #011e4a;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.card3 .ourFauvoriteName{
+    font-family: 'Permanent Marker', cursive;
+    color: #d31d3e;
+}
+
+.chartName{
+    color:#1e698f;
+}
+
+.contentContainer.charts{
+    padding:0; 
+}
+
+.marginTopChart{
+    margin-top: 2vh;
+}
+
+.tittleCard{
+    margin-top: 20px;
+}
+
+
+

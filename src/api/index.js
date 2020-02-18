@@ -8,8 +8,7 @@ const REST_API = async ( endPoint, verb ) => {
         if( respond.status === 404 || respond.status === 500 )  throw new Error( "Not 200 response" );
         return respond.json();
     } catch (error) {
-        console.log('error')
-        return { error: 'foo'}
+        console.log('error');
     }
 };
 

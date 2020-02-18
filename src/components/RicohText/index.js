@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 
 const RicohText = props => {
-    const { id, label, placeholder, onChange, shrinkValidate } = props;
+    const { id, label, placeholder, onChange, shrinkValidate, value } = props;
 
     return (
         <TextField
@@ -11,6 +11,7 @@ const RicohText = props => {
             label={ label }
             placeholder={ placeholder }
             onChange={ onChange }
+            value = { value}
             style={{ margin: 8 }}
             fullWidth
             margin="normal"
@@ -26,14 +27,16 @@ RicohText.propTypes = {
     id : PropTypes.string.isRequired,
     label : PropTypes.string,
     placeholder : PropTypes.string,
-    shrinkValidate: PropTypes.bool
+    shrinkValidate: PropTypes.bool,
+    value: PropTypes.string
 };
 
 RicohText.defaultProps = {
     id : 'id-text',
     label : 'Title',
     placeholder : 'Placeholder',
-    shrinkValidate: true
+    shrinkValidate: true,
+    value: ''
 }
 
 export default RicohText;

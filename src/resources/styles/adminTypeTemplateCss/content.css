@@ -1,0 +1,67 @@
+/********************************************************************** CONTENT ******************************************************************************/
+
+.content{
+    width: -webkit-fill-available;
+    height: 92%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation: fadein 1s;
+}
+
+.content .noCollapse{
+    margin-left: 170px;	
+    transition: all 0.5s;
+    display: flex;
+}
+
+.content .collapse{
+    margin-left: 45px;
+   	transition: all 0.5s;
+    display: flex;
+}
+
+.content .contentContainer.charts.noCollapse,.content .contentContainer.charts.collapse{
+    display: block;
+}
+
+
+.containerTest{
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.2em;
+    width: -webkit-fill-available;
+}
+
+.contentMainTittle{
+    font-size: 25px;
+    color: #011e4a;
+    padding-bottom: 20px;
+    margin-left: 25px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid transparent;
+    padding-top: 2vh;
+    left: 50%;
+    margin-left: -142px;
+    position: relative;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #c51d3f;
+    color: white;
+}
+
+.angularLogo{
+    width: 40vh;
+}
+
+.ng-table th.sortable {
+    cursor: pointer;
+    background: transparent;
+    z-index: 0;
+}
+
+.contentContainer{
+    padding: 2vh;
+}

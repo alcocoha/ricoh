@@ -1,0 +1,117 @@
+/********************************************************************** MENU SIDEBAR ******************************************************************************/
+
+.menu{
+  position: relative;
+  z-index: 10;
+}
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#011e4a+0,8198b9+100 */
+  background: rgb(1,30,74); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(1,30,74,1) 0%, rgba(129,152,185,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(1,30,74,1) 0%,rgba(129,152,185,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(1,30,74,1) 0%,rgba(129,152,185,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#011e4a', endColorstr='#8198b9',GradientType=0 ); /* IE6-9 */
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav.collapse{
+  width: 45px;
+  display: block;
+}
+
+.sidenav.noCollapse{
+  width: 170px;
+  display: block;
+}
+
+.imgLogoPosition{
+  position: relative;
+  top: 8px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.minLogo{
+  width: 20px;
+  margin-top: 4px;
+  padding-bottom: 10px;
+}
+
+.fullLogo{
+  width: 140px;
+  margin-top: 9px;
+}
+
+.menuItems{
+  color: white;
+  margin-top: 21px;
+}
+
+.menuItems ul{
+  list-style-type: none;
+  padding-left: 0px;
+  padding-top: 8px;
+}
+
+.minLiNumber{
+  margin-left: 4px;
+}
+
+.menuItems li{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.menuItems .menuOpenUl li{
+  padding-left: 38px;  
+}
+
+.menuItems .menuCloseUl li{
+  padding-left: 11px;  
+}
+
+.menuItems  li:hover{
+  background: #839abb;
+}
+
+.menuItems .menuOpenUl li:hover{
+  background: #839abb;
+  padding-left: 51px;
+}
+
+.menuItems  li.active:hover{
+  background: #839abb;
+}
+
+.menuItems li.active{
+  background: #839abb;
+}
+
+.menuItems .menuOpenUl li.active::before {
+    content: ">";
+    margin-right: 4px;
+    color: white;
+}
+
+.menuItems .menuOpenUl li.active:hover {
+    content: ">";
+    color: white;
+    padding-left: 38px;
+}
+
+
+
+

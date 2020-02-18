@@ -9,6 +9,7 @@ export const useStyles = makeStyles(theme => ({
     },
     imgContainer: {
         padding: 10,
+        paddingTop: 20,
         backgroundColor: '#021e4a',
         textAlign: 'center'
     },

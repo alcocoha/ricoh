@@ -1,0 +1,353 @@
+[	
+	{
+		"brand": "msi",
+		"model":"wt73vr",
+	    "price": "5049",
+	    "cpu": "i7",
+	    "ram": "32",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/msi"
+	},
+	{
+		"brand": "msi",
+		"model":"GT83Titan",
+	    "price": "4699",
+	    "cpu": "i7",
+	    "ram": "64",
+	    "type": "gaming",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/msi"
+	},
+	{
+		"brand": "msi",
+		"model":"ws63",
+	    "price": "3799",
+	    "cpu": "i7",
+	    "ram": "32",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/msi"
+	},
+	{
+		"brand": "msi",
+		"model":"p65",
+	    "price": "1799",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/msi"
+	},
+	{
+		"brand": "dell",
+		"model":"xps9575",
+	    "price": "2622",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/dell"
+	},
+	{
+		"brand": "dell",
+		"model":"inspiron5378",
+	    "price": "957",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/dell"
+	},
+	{
+		"brand": "dell",
+		"model":"vostro5568",
+	    "price": "775",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/dell"
+	},
+	{
+		"brand": "asus",
+		"model":"rogG703",
+	    "price": "2999",
+	    "cpu": "i7",
+	    "ram": "32",
+	    "type": "gaming",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/asus"
+	},
+	{
+		"brand": "asus",
+		"model":"G701VO",
+	    "price": "2138",
+	    "cpu": "i7",
+	    "ram": "32",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/asus"
+	},
+	{
+		"brand": "asus",
+		"model":"GL502VM",
+	    "price": "1559",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/asus"
+	},
+	{
+		"brand": "asus",
+		"model":"vivobookPro",
+	    "price": "1179",
+	    "cpu": "i7",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/asus"
+	},
+	{
+		"brand": "apple",
+		"model":"macbookPro15",
+	    "price": "2957",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/apple"
+	},
+	{
+		"brand": "apple",
+		"model":"macbookAir",
+	    "price": "899",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/apple"
+	},
+	{
+		"brand": "apple",
+		"model":"macbookPro13",
+	    "price": "1876",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/apple"
+	},
+	{
+		"brand": "hp",
+		"model":"omenX17",
+	    "price": "2299",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/hp"
+	},
+	{
+		"brand": "hp",
+		"model":"omen15",
+	    "price": "899",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/hp"
+	},
+	{
+		"brand": "hp",
+		"model":"Spectrex360",
+	    "price": "1413",
+	    "cpu": "i7",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/hp"
+	},
+	{
+		"brand": "xiaomi",
+		"model":"miAir",
+	    "price": "899",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "workstation",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/otros"
+	},
+	{
+		"brand": "lenovo",
+		"model":"ideapad",
+	    "price": "899",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/otros"
+	},
+	{
+		"brand": "medion",
+		"model":"erazer",
+	    "price": "999",
+	    "cpu": "i7",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/otros"
+	},
+	{
+		"brand": "medion",
+		"model":"akoya2",
+	    "price": "299",
+	    "cpu": "i3",
+	    "ram": "4",
+	    "type": "multimedia",
+	    "shape":"laptop",
+	    "urlImagePath": "resources/images/jsonPcImages/laptops/otros"
+	},
+	{
+		"brand": "msi",
+		"model":"aegis",
+	    "price": "4999",
+	    "cpu": "i7",
+	    "ram": "64",
+	    "type": "gaming",
+	   	"shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/msi"
+	},
+	{
+		"brand": "msi",
+		"model":"vortexW25",
+	    "price": "4099",
+	    "cpu": "i7",
+	    "ram": "32",
+	    "type": "workstation",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/msi"
+	},
+	{
+		"brand": "msi",
+		"model":"trident3",
+	    "price": "1449",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/msi"
+	},
+	{
+		"brand": "hp",
+		"model":"omen880",
+	    "price": "1949",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/hp"
+	},
+	{
+		"brand": "hp",
+		"model":"proliantML110",
+	    "price": "1574",
+	    "cpu": "intel xeon",
+	    "ram": "16",
+	    "type": "server",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/hp"
+	},
+	{
+		"brand": "hp",
+		"model":"pavilionAIO",
+	    "price": "1499",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "all in one",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/hp"
+	},
+	{
+		"brand": "hp",
+		"model":"pavilionGaming",
+	    "price": "1099",
+	    "cpu": "i5",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/hp"
+	},
+	{
+		"brand": "apple",
+		"model":"imacPro",
+	    "price": "5149",
+	    "cpu": "intel xeon",
+	    "ram": "32",
+	    "type": "workstation",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/apple"
+	},
+	{
+		"brand": "apple",
+		"model":"imac21",
+	    "price": "1179",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "multimedia",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/apple"
+	},
+	{
+		"brand": "apple",
+		"model":"imac27",
+	    "price": "2379",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "workstation",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/apple"
+	},
+	{
+		"brand": "apple",
+		"model":"macMini",
+	    "price": "1249",
+	    "cpu": "i5",
+	    "ram": "8",
+	    "type": "workstation",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/apple"
+	},
+	{
+		"brand": "acer",
+		"model":"predator",
+	    "price": "2999",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/otros"
+	},
+	{
+		"brand": "asus",
+		"model":"rogStrix",
+	    "price": "1369",
+	    "cpu": "i7",
+	    "ram": "16",
+	    "type": "gaming",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/otros"
+	},
+	{
+		"brand": "lenovo",
+		"model":"ideacentre",
+	    "price": "249",
+	    "cpu": "intel celeron",
+	    "ram": "4",
+	    "type": "multimedia",
+	    "shape":"desktop",
+	    "urlImagePath": "resources/images/jsonPcImages/pc/otros"
+	}
+
+]
