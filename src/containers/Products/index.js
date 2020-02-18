@@ -15,11 +15,9 @@ const Products = () => {
 
 	const getAllProducts = async () => {
 		// add request
-        if( isEmpty( products ) ){
-			const data = await getData('5e4a06f92f0000640097cea4');
-			dispatch( addFirstProductAction( data ) );
-			setRequestActive(true);
-		}
+		const data = await getData('5e4a06f92f0000640097cea4');
+		dispatch( addFirstProductAction( data ) );
+		setRequestActive(true);
     }
 
     useEffect( () => {

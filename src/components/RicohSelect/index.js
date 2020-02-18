@@ -7,7 +7,7 @@ import { useStyles } from './styles';
 
 const RicohSelect = props => {
 
-    const { id, label, value, options, onChange } = props;
+    const { id, label, value, options, onChange, placeholder } = props;
 
     const classes = useStyles();
 
@@ -29,7 +29,7 @@ const RicohSelect = props => {
                     id
                 }}
             >
-                <option value="">Selecciona una opción</option>
+                <option value="">{ placeholder }</option>
                 { buildOptions() }
             </Select>
         </FormControl>
@@ -40,7 +40,8 @@ RicohSelect.propTypes = {
     id : PropTypes.string.isRequired,
     label : PropTypes.string,
     value : PropTypes.string,
-    options : PropTypes.array
+    options : PropTypes.array,
+    placeholder: PropTypes.string
 };
 
 RicohSelect.defaultProps = {
@@ -50,7 +51,8 @@ RicohSelect.defaultProps = {
     options: [
         { label: 'foo', value: 1 },
         { label: 'bar', value: 2 }
-    ]
+    ],
+    placeholder: ''
 }
 
 export default RicohSelect;

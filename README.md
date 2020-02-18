@@ -1,4 +1,4 @@
-Creado por Jorge Alberto Hurtado Ortega [http://jorgehurtado.me/](Book)
+Creado por Jorge Alberto Hurtado Ortega [http://jorgehurtado.me/](http://jorgehurtado.me/)
 
 ## Creado con React versión 16.12.0
 

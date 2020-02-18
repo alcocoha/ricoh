@@ -6,6 +6,8 @@ import Tab from '@material-ui/core/Tab';
 import { Link } from 'react-router-dom';
 import { useStyles } from './styles';
 import logo from '../../resources/images/ricoh-hd_logo.png'
+import england from '../../resources/icons/languages/england.png';
+import spain from '../../resources/icons/languages/spain.png';
 
 const RicohNavBar = props => {
     const classes = useStyles();
@@ -28,7 +30,11 @@ const RicohNavBar = props => {
 
     return (
         <>
-            <div className={classes.imgContainer}><img src={logo} /></div>
+            <div className={classes.imgContainer}>
+                <img src={logo} />
+                <button className={classes.englandButtons} onClick={ () => props.handlerChangeLanguage('en') }><img src={england}/></button>
+                <button className={classes.spainButtons} onClick={ () => props.handlerChangeLanguage('es') }><img src={spain}/></button>
+            </div>
             <AppBar position="static" className={classes.root}>
                 <Tabs value={ value } onChange={ handleChange } aria-label="simple tabs example">
                     { buildMenu() }

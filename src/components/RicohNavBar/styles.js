@@ -16,6 +16,28 @@ export const useStyles = makeStyles(theme => ({
     menuButton: {
         marginRight: theme.spacing(2),
     },
+    englandButtons: {
+        position: 'absolute',
+        width: 60,
+        right: 100,
+        background: 'transparent',
+        border: 'none',
+        cursor: 'pointer',
+        '& img': {
+            width: '100%'
+        }
+    },
+    spainButtons: {
+        position: 'absolute',
+        right: 34,
+        width: 53,
+        background: 'transparent',
+        border: 'none',
+        cursor: 'pointer',
+        '& img': {
+            width: '100%'
+        }
+    },
     title: {
         flexGrow: 1,
     },
