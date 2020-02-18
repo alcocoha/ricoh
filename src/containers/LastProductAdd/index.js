@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import isEmpty from 'lodash/isEmpty';
 
 const useStyles = makeStyles({
@@ -31,8 +28,6 @@ const LastProductAdd = () => {
     const lastProduct = useSelector( state => state.lastProduct );
 
     const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-    
 
     return (
         <Container maxWidth="sm">

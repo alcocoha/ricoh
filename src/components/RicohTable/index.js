@@ -216,9 +216,10 @@ const RicohTable = props => {
 								<TableRow >
 									{
 										headCells.map( (item, index) =>
-											<TableCell align="center" key={index}>
+										<TableCell align="center" key={index}>
 												<RicohText
 													id={ item.id }
+													valueFromState={ false }
 													onChange={ handleChange }
 													placeholder="Buscar"
 													shrinkValidate={ false }

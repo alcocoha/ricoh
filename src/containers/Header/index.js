@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { MENU } from '../../constants/commons';
 import RicohNavBar from '../../components/RicohNavBar';
 import { changeToSpanishAction, changeToEnglishAction } from '../../store/actions/languageActions';
 import { metadata } from '../../constants/translateMockup';
@@ -9,7 +8,7 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const language = useSelector( state => state.language );
-    
+
     // function to set language into store
     const handlerChangeLanguage = language => {
         if( language === 'es') dispatch( changeToSpanishAction() );
