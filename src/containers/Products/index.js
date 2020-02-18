@@ -4,7 +4,6 @@ import { addFirstProductAction } from '../../store/actions/productsActions';
 import { getData } from '../../api';
 import RicohTable from '../../components/RicohTable';
 import RicohCarousel from '../../components/RicohCarousel';
-import isEmpty from 'lodash/isEmpty';
 
 const Products = () => {
 
@@ -22,11 +21,11 @@ const Products = () => {
 
     useEffect( () => {
 		if( !requestActive ) getAllProducts();
-	}, []);
+	}, [requestActive]);
 
 	return (
 		<>
-			{ !isEmpty( products ) &&
+			{ requestActive ?
 				<>
 					<RicohTable
 						rows= { products.data }
@@ -35,6 +34,8 @@ const Products = () => {
 						products = { products.data }
 					/>
 				</>
+				:
+				<div style={ { textAlign: 'center', paddingTop: 50 } }>Cargando información...</div>
 			}
 		</>
 	);

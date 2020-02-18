@@ -248,7 +248,7 @@ const RicohTable = props => {
 							</TableBody>
 						</Table>
 					</TableContainer>
-					<div className={classes.pagination}>	
+					<div className={classes.pagination}>
 						<div>
 							{
 								rows.length > rowsPerPage &&
