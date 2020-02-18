@@ -1,12 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Container from '@material-ui/core/Container';
+import { metadata } from '../../constants/translateMockup';
 import './styles.scss';
 
 const RicohCarousel = ({ products }) => {
 
-    console.log(products)
+    const language = useSelector( state => state.language );
 
     const getImage = item => {
         try {
@@ -35,12 +37,11 @@ const RicohCarousel = ({ products }) => {
 
     return (
         <Container maxWidth="lg">
-            <h1>Carrusel de ordenadores portatiles</h1>
+            <h1>{ metadata.products_section[language].carouselTitle }</h1>
             <Carousel
                 showThumbs={ false }
             >
                 { productsItems() }
-                
             </Carousel>
         </ Container>
     );

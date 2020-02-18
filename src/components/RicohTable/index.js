@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux';
 import PropTypes from "prop-types";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -13,6 +14,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { useStyles } from './styles';
 import RicohText from '../RicohText';
+import { metadata } from '../../constants/translateMockup';
+
 
 function descendingComparator(a, b, orderBy) {
 	if (b[orderBy] < a[orderBy]) {
@@ -51,6 +54,7 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
+	const language = useSelector( state => state.language );
 	const {
 		classes,
 		order,
@@ -77,7 +81,7 @@ function EnhancedTableHead(props) {
 							direction={orderBy === headCell.id ? order : "asc"}
 							onClick={createSortHandler(headCell.id)}
 						>
-						{headCell.label}
+						{ metadata.products_section[language][headCell.id] }
 						{orderBy === headCell.id ? (
 							<span className={classes.visuallyHidden}>
 							{order === "desc" ? "sorted descending" : "sorted ascending"}
@@ -102,6 +106,9 @@ EnhancedTableHead.propTypes = {
 
 
 const RicohTable = props => {
+
+	const language = useSelector( state => state.language );
+
     const { rows } = props;
 	const classes = useStyles();
 	const [ newRows, setNewRows ] = React.useState(rows);
@@ -196,7 +203,7 @@ const RicohTable = props => {
 
 	return (
         <Container maxWidth="lg">
-            <h1>Crear nuevo ordenador</h1>
+            <h1>{ metadata.products_section[language].title }</h1>
 			<div className={classes.root}>
 				<Paper className={classes.paper}>
 					<TableContainer>
@@ -221,7 +228,7 @@ const RicohTable = props => {
 													id={ item.id }
 													valueFromState={ false }
 													onChange={ handleChange }
-													placeholder="Buscar"
+													placeholder={ metadata.products_section[language].labelSearch }
 													shrinkValidate={ false }
 													label={ "" }
 												/>

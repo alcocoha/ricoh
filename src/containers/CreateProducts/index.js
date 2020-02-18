@@ -71,7 +71,7 @@ const CreateProducts = () => {
     const handleAddProduct = () => {
         if(brand !== '' && model !== '' && price !== '' && cpu !== ''
             && ram !== '' && type !== '' && shape !== '') {
-                const data = { 
+                const data = {
                     brand,
                     model,
                     price,

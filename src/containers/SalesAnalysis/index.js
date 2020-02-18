@@ -6,9 +6,12 @@ import { addFirstProductAction } from '../../store/actions/productsActions';
 import { getData } from '../../api';
 import isEmpty from 'lodash/isEmpty';
 import { decimalToHex } from '../../utils';
+import { metadata } from '../../constants/translateMockup';
 import './styles.scss';
 
 const SalesAnalysis = () => {
+
+    const language = useSelector( state => state.language );
 
     const [ requestActive, setRequestActive ] = useState(false);
 
@@ -58,7 +61,7 @@ const SalesAnalysis = () => {
         const data = Object.values( countData );
 
         const colors = [];
-        
+
         // dynamic colors are created
         for( let i = 0; i < data.length; i++){
             colors.push(decimalToHex());
@@ -80,9 +83,9 @@ const SalesAnalysis = () => {
 
     return (
         <div className="sales-analysis-container">
-            <h1>Analisis de ventas</h1>
+            <h1>{ metadata.summary_section[language].title }</h1>
             <div className="grid">
-                { !isEmpty( products ) && 
+                { !isEmpty( products ) &&
                     <>
                         <div>
                             <Bar
@@ -96,13 +99,13 @@ const SalesAnalysis = () => {
                             />
                         </div>
                         <div className="donut-chart">
-                            <h4>Memoria RAM</h4>
+                            <h4>{ metadata.summary_section[language].memoryTitle }</h4>
                             <Doughnut data={donutData()} />
                         </div>
                     </>
                 }
             </div>
-            
+
         </div>
     );
 };
